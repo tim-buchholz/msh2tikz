@@ -81,7 +81,7 @@ def get_coordinate_definition(points:np.ndarray) -> str:
     out_str = out_str[:-1]
     return out_str
 
-def get_all_corrdinates(points:np.ndarray) -> str:
+def get_all_coordinates(points:np.ndarray) -> str:
     out_str = ""
     for idx,_ in enumerate(points):
         out_str += f"P{idx},"
@@ -109,7 +109,7 @@ def get_tex_str(points: np.ndarray, cells:np.ndarray, cell_dofmap:np.ndarray, ou
         "\\draw[thin,opacity=0.5] (\\a) -- (\\b) -- (\\c) -- cycle;}\n",
         "\n",
         "% Label nodes (only for creation process)\n",
-        f"% \\foreach \\a in {get_all_corrdinates(points=points)}}}{{\n",
+        f"% \\foreach \\a in {get_all_coordinates(points=points)}}}{{\n",
         "%     \\node[blue!80!black, font=\\tiny] at (\\a) {\\a};\n",
         "% }\n",
         "\\end{tikzpicture}\n",
