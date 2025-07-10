@@ -12,6 +12,7 @@ This script converts a 2D triangular mesh in `.msh` format (from Gmsh) into a st
 - Optionally prints the generated TikZ code to the terminal.
 - Automatically generates a sample rectangle mesh if no file is provided.
 - Clean and minimal LaTeX/TikZ output.
+- In case you need to make adjustments to your mesh, the nodes are already ready to get labeled in the .tex file. You just need to uncomment the commented lines of tikz-code.
 
 ---
 
