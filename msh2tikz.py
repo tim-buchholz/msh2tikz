@@ -97,28 +97,28 @@ def get_triangle_definition(cell_dofmap:np.ndarray) -> str:
 
 def get_tex_str(points: np.ndarray, cells:np.ndarray, cell_dofmap:np.ndarray, out:str, print_to_terminal=False) -> None:
     write_lines = [
-        "\\documentclass[tikz]{standalone}",
-        "\\usepackage{tikz}",
-        "\\usetikzlibrary{calc}",
-        "\\begin{document}",
-        "\\begin{tikzpicture}[scale=1.0]",
-        "% --- Define all coordinates manually ---",
-        f"{get_coordinate_definition(points=points)}",
-        "\\foreach \\a/\\b/\\c in {",
-        f"{get_triangle_definition(cell_dofmap=cell_dofmap)}}}{{",
-        "\\draw[thin,opacity=0.5] (\\a) -- (\\b) -- (\\c) -- cycle;}",
+        "\\documentclass[tikz]{standalone}\n",
+        "\\usepackage{tikz}\n",
+        "\\usetikzlibrary{calc}\n",
+        "\\begin{document}\n",
+        "\\begin{tikzpicture}[scale=1.0]\n",
+        "% --- Define all coordinates manually ---\n",
+        f"{get_coordinate_definition(points=points)}\n",
+        "\\foreach \\a/\\b/\\c in {\n",
+        f"{get_triangle_definition(cell_dofmap=cell_dofmap)}}}{{\n",
+        "\\draw[thin,opacity=0.5] (\\a) -- (\\b) -- (\\c) -- cycle;}\n",
         "\n",
-        "% Label nodes (only for creation process)",
-        f"% \\foreach \\a in {get_all_corrdinates(points=points)}}}{{",
-        "%     \\node[blue!80!black, font=\\tiny] at (\\a) {\\a};",
-        "% }",
-        "\\end{tikzpicture}",
-        "\\end{document}"
+        "% Label nodes (only for creation process)\n",
+        f"% \\foreach \\a in {get_all_corrdinates(points=points)}}}{{\n",
+        "%     \\node[blue!80!black, font=\\tiny] at (\\a) {\\a};\n",
+        "% }\n",
+        "\\end{tikzpicture}\n",
+        "\\end{document}\n"
     ]
     with open(out,'w') as texfile: 
         if print_to_terminal:
             for line in write_lines:
-                print(line)
+                print(line,end='')
         texfile.writelines(write_lines)
 
 
