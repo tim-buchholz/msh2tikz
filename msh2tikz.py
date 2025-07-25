@@ -109,7 +109,7 @@ def get_tex_str(points: np.ndarray, cells:np.ndarray, cell_dofmap:np.ndarray, ou
         "\\draw[thin,opacity=0.5] (\\a) -- (\\b) -- (\\c) -- cycle;}\n",
         "\n",
         "% Label nodes (only for creation process)\n",
-        f"% \\foreach \\a in {get_all_coordinates(points=points)}}}{{\n",
+        f"% \\foreach \\a in {{{get_all_coordinates(points=points)}}}{{\n",
         "%     \\node[blue!80!black, font=\\tiny] at (\\a) {\\a};\n",
         "% }\n",
         "\\end{tikzpicture}\n",
@@ -130,7 +130,7 @@ def main():
     else:
         filename = "example_mesh"
         print("No filename provided. Generating example mesh...")
-        generate_rectangle_mesh(h=0.75, filename=filename)
+        generate_rectangle_mesh(h=0.5, filename=filename)
 
     out_file = args.out if args.out else f"{filename}.tex"
 
