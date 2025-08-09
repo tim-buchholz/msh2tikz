@@ -132,6 +132,10 @@ def main():
         print("No filename provided. Generating example mesh...")
         generate_rectangle_mesh(h=0.5, filename=filename)
 
+    if '.msh' in filename:
+        filename = filename.strip('.msh')
+        print(f"Filename provided: {filename}")
+
     out_file = args.out if args.out else f"{filename}.tex"
 
     points, cells, cell_dofmap = read_mesh(filename)
