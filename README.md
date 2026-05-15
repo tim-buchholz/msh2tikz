@@ -8,9 +8,9 @@ The tool can also generate a built-in example mesh when no input file is given, 
 
 ---
 
-## Features
+## 🔧 Features
 
-- Convert 2D triangular Gmsh meshes to standalone TikZ/LaTeX documents.
+- Convert 2D triangular Gmsh meshes (Gmsh 2.2 format) to standalone TikZ/LaTeX documents.
 - Generate a sample rectangular mesh when no input mesh is provided.
 - Export only a rectangular subsection of the mesh with `--bbox`.
 - Rescale geometry with `--fit-width` / `--fit-height`.
@@ -32,9 +32,9 @@ The tool can also generate a built-in example mesh when no input file is given, 
 
 ---
 
-## Setup
+## 📦 Setup
 
-### Option 1: Conda / Miniforge
+### Conda / Miniforge
 
 We recommend using [Miniforge](https://github.com/conda-forge/miniforge):
 
