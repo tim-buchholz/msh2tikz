@@ -22,25 +22,25 @@ We recommend using [Miniforge](https://github.com/conda-forge/miniforge) to crea
 
 ```bash
 # Create environment
-conda create -n msh2tex python=3.11
+conda create -n msh2tikz python=3.11
 
 # Activate environment
-conda activate msh2tex
+conda activate msh2tikz
 
 # Install required packages
-conda install -c conda-forge gmsh meshio numpy matplotlib
+conda install -c conda-forge python-gmsh meshio numpy matplotlib
 
 
 ## 💡 Examples
 
 ```bash
 # Convert an existing mesh to TikZ
-python msh2tex.py my_mesh -o my_mesh_output.tex
+python msh2tikz.py my_mesh -o my_mesh_output.tex
 
 # Generate a sample rectangle mesh and convert to TikZ
-python msh2tex.py
+python msh2tikz.py
 
 # Convert a mesh and print the TikZ code to terminal
-python msh2tex.py my_mesh -p
+python msh2tikz.py my_mesh -p
 
 
